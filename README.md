@@ -1,2 +1,2 @@
 # Multimedia
-Multimedia and digital design.
+Multimedia and digital design classes.
