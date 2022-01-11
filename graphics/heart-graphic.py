@@ -1,3 +1,4 @@
+from typing import Sequence
 import pygame
 import random
 #colores  
@@ -7,7 +8,10 @@ CAFE = (90, 50, 15)
 BLANCO = (255,255,255)
 
 pygame.init()
-Dimensiones = (800, 600)
+WIDTH = 800
+HEIGHT = 600
+SIZE = 7
+Dimensiones = (WIDTH, HEIGHT)
 Pantalla = pygame.display.set_mode(Dimensiones)
 pygame.display.set_caption("Introducción a los Gráficos")
  
@@ -26,7 +30,17 @@ while not Terminar:
     #---Código de dibujo----
     Pantalla.fill(NEGRO)
     #--Todos los dibujos van después de esta línea
-    pygame.draw.line(Pantalla, BLANCO, [400,600], [400, -400], 2)#Vertical
+    # Debajo
+    # Derecha
+    pygame.draw.line(Pantalla, ROJO, (350, 615), (500, 350), SIZE)
+    # Izquierda
+    pygame.draw.line(Pantalla, ROJO, (170, 350), (500, 800), SIZE)
+
+    # Arriba
+    # Derecha
+    pygame.draw.arc(Pantalla, ROJO, [(160, 260), (200, 270)], 0.65, 2.8, SIZE)
+    # Izquierda
+    pygame.draw.arc(Pantalla, ROJO, [(315, 260), (200, 270)], 0.38, 2.5, SIZE)
     #--Todos los dibujos van antes de esta línea
     pygame.display.flip()
     reloj.tick(20)  # Limitamos a 20 fotogramas por segundo
