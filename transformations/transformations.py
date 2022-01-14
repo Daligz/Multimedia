@@ -17,8 +17,14 @@ pygame.display.set_caption("Introducción a los Gráficos")
 Terminar = False
 #Se define para poder gestionar cada cuando se ejecuta un fotograma
 reloj = pygame.time.Clock()
-timer = 0
-timer_status = True
+
+penguin = pygame.image.load("penguin-image.png")
+cat = pygame.image.load("cat-image.gif")
+dog = pygame.image.load("dog-image.png")
+
+angle = 0
+plus = 0
+weird = 0
 
 while not Terminar:
     #---Manejo de eventos
@@ -26,32 +32,32 @@ while not Terminar:
        if Evento.type == pygame.QUIT:
             Terminar = True
     #---La lógica del juego
- 
-    if (timer > 5):
-        timer_status = False
-    elif (timer < -5):
-        timer_status = True
-
-    if (timer_status):
-        timer += 1
-    else:
-        timer -= 1
-
+    plus += 1
+    weird += (plus % 10) * 2
+    angle = (angle + 0.5) % 360
     #---Código de dibujo----
     Pantalla.fill(NEGRO)
     #--Todos los dibujos van después de esta línea
-    # Debajo
-    # Derecha
-    pygame.draw.line(Pantalla, ROJO, (350 + timer, 615 + timer), (500 + timer, 350 + timer), SIZE)
-    # Izquierda
-    pygame.draw.line(Pantalla, ROJO, (170 + timer, 350 + timer), (500 + timer, 800 + timer), SIZE)
 
-    # Arriba
-    # Derecha
-    pygame.draw.arc(Pantalla, ROJO, [(160 + timer, 260 + timer), (200 + timer, 270 + timer)], 0.65, 2.8, SIZE)
-    # Izquierda
-    pygame.draw.arc(Pantalla, ROJO, [(315 + timer, 260 + timer), (200 + timer, 270 + timer)], 0.38, 2.5, SIZE)
+    # -=======================================================- #
+    catRotated = pygame.transform.rotate(cat, angle)
+    catRotatedOther = pygame.transform.rotate(cat, weird / 2)
+
+    penguinScaled = pygame.transform.scale(penguin, (weird, 150))
+    penguinScaledOther = pygame.transform.scale(penguin, (plus, weird / 2))
+
+    dogFlipped = pygame.transform.flip(dog, True, True)
+    # -=======================================================- #
+
+    Pantalla.blit(catRotated, (30, 50))
+    Pantalla.blit(catRotatedOther, (50, 120))
+
+    Pantalla.blit(penguinScaled, (1, 5))
+    Pantalla.blit(penguinScaledOther, (1, 5))
+
+    Pantalla.blit(dogFlipped, (plus * -1, ((plus * 5) * -1)))
+    Pantalla.blit(dog, (angle, angle * (plus)))
     #--Todos los dibujos van antes de esta línea
     pygame.display.flip()
-    reloj.tick(20)  # Limitamos a 20 fotogramas por segundo
+    reloj.tick(75)  # Limitamos a 20 fotogramas por segundo
 pygame.quit()
