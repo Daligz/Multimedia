@@ -5,7 +5,15 @@ RED = (255, 0, 0)
 BROWN = (90, 50, 15)
 WHITE = (255,255,255)
 
-pygame.init()
+COLOR_SKIN = "#ffe7d5"
+COLOR_EYE = "#da3e49"
+COLOR_EYE_BRIGHTNESS = "#f0dc63";
+COLOR_EYE_BRIGHTNESS_BEHIND = "#f17e72";
+COLOR_EYE_BRIGHTNESS_TOP = "#fff7f8";
+COLOR_EYE_PUPIL = "#6f0a00";
+COLOR_EYE_BORDER = "#651c0d";
+
+pygame.init() 
 WIDTH = 800
 HEIGHT = 600
 ScreenSize = (WIDTH, HEIGHT)
@@ -31,19 +39,36 @@ while not endGame:
     Screen.fill(BLACK)
     #--Todos los dibujos van después de esta línea
 
-    #pygame.draw.circle(Screen, WHITE, (400, 100), 75)
-    #pygame.draw.rect(Screen, RED, [(350, 175), (100, 200)])
-
     # Head
-    pygame.draw.circle(Screen, BROWN, (400, 300), 270)
+    pygame.draw.circle(Screen, COLOR_SKIN, (400, 300), 270)
 
+    # Left eye border
+    pygame.draw.circle(Screen, COLOR_EYE_BORDER, (250,  250), 61.5)
     # Left eye
-    pygame.draw.circle(Screen, RED, (250,  250), 60)
-    # Pupila (Left eye)
-    pygame.draw.ellipse(Screen, WHITE, [(235, 225), (20, 75)])
+    pygame.draw.circle(Screen, COLOR_EYE, (250,  250), 60)
+    # Brightness behind eye
+    pygame.draw.ellipse(Screen, COLOR_EYE_BRIGHTNESS_BEHIND, [(217, 240), (70, 70)])
+    # Brightness eye
+    pygame.draw.ellipse(Screen, COLOR_EYE_BRIGHTNESS, [(235, 275), (50, 35)])
+    # Brightness top eye
+    pygame.draw.circle(Screen, COLOR_EYE_BRIGHTNESS_TOP, (225,  205), 17)
+    # Pupil eye
+    pygame.draw.ellipse(Screen, COLOR_EYE_PUPIL, [(245, 220), (10, 75)])
 
+    # Right eye border
+    pygame.draw.circle(Screen, COLOR_EYE_BORDER, (530,  250), 61.5)
     # Right eye
-    pygame.draw.circle(Screen, WHITE, (530,  250), 60)
+    pygame.draw.circle(Screen, COLOR_EYE, (530,  250), 60)
+    # Brightness behind eye
+    pygame.draw.ellipse(Screen, COLOR_EYE_BRIGHTNESS_BEHIND, [(500, 240), (70, 70)])
+    # Brightness eye
+    pygame.draw.ellipse(Screen, COLOR_EYE_BRIGHTNESS, [(515, 275), (50, 35)])
+    # Brightness top eye
+    pygame.draw.circle(Screen, COLOR_EYE_BRIGHTNESS_TOP, (502,  208), 10)
+    # Brightness top eye two
+    pygame.draw.circle(Screen, COLOR_EYE_BRIGHTNESS_TOP, (542,  195), 5)
+    # Pupil eye
+    pygame.draw.ellipse(Screen, COLOR_EYE_PUPIL, [(525, 220), (10, 75)])
 
     #--Todos los dibujos van antes de esta línea
     pygame.display.flip()
