@@ -10,7 +10,7 @@ COLOR_BACKGROUND = "#f7f7f7"
 
 COLOR_SKIN = "#ffe7d5"
 COLOR_BORDER = "#651c0d"
-COLOR_MOUTH = "#ec8783"
+COLOR_MOUTH = "#f48696"
 
 # Eyes
 COLOR_EYE = "#da3e49"
@@ -75,6 +75,10 @@ def printMouth():
     pygame.draw.line(Screen, COLOR_BORDER, (330, 390), (470, 390), 2)
     # Mouth bottom limiter
     pygame.draw.rect(Screen, COLOR_SKIN, [(350, 485), (100, 10)])
+    # Tooth border
+    pygame.draw.polygon(Screen, COLOR_BORDER, [(458, 390), (465, 409), (472, 390)])
+    # Tooth
+    pygame.draw.polygon(Screen, COLOR_EYE_BRIGHTNESS_TOP, [(460, 390), (465, 405), (470, 390)])
 
 endGame = False
 #Se define para poder gestionar cada cuando se ejecuta un fotograma
