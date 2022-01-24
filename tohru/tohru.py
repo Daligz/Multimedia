@@ -1,3 +1,4 @@
+from re import S
 import pygame
 #colores  
 BLACK = (0, 0, 0)
@@ -5,15 +6,18 @@ RED = (255, 0, 0)
 BROWN = (90, 50, 15)
 WHITE = (255,255,255)
 
+COLOR_BACKGROUND = "#f7f7f7"
+
 COLOR_SKIN = "#ffe7d5"
-COLOR_BORDER = "#651c0d";
+COLOR_BORDER = "#651c0d"
+COLOR_MOUTH = "#ec8783"
 
 # Eyes
 COLOR_EYE = "#da3e49"
-COLOR_EYE_BRIGHTNESS = "#f0dc63";
-COLOR_EYE_BRIGHTNESS_BEHIND = "#f17e72";
-COLOR_EYE_BRIGHTNESS_TOP = "#fff7f8";
-COLOR_EYE_PUPIL = "#6f0a00";
+COLOR_EYE_BRIGHTNESS = "#f0dc63"
+COLOR_EYE_BRIGHTNESS_BEHIND = "#f17e72"
+COLOR_EYE_BRIGHTNESS_TOP = "#fff7f8"
+COLOR_EYE_PUPIL = "#6f0a00"
 
 pygame.init() 
 WIDTH = 800
@@ -60,6 +64,18 @@ def printRightEye():
 def printNose():
     pygame.draw.ellipse(Screen, COLOR_BORDER, [(400, 310), (3.5, 7.5)])
 
+def printMouth():
+    # Mouth border
+    pygame.draw.ellipse(Screen, COLOR_BORDER, [(324, 340), (152.5, 152.5)])
+    # Mouth inside
+    pygame.draw.ellipse(Screen, COLOR_MOUTH, [(325, 340), (150, 150)])
+    # Mouth limiter
+    pygame.draw.rect(Screen, COLOR_SKIN, [(319, 320), (152, 70)])
+    # Mouth limiter border
+    pygame.draw.line(Screen, COLOR_BORDER, (330, 390), (470, 390), 2)
+    # Mouth bottom limiter
+    pygame.draw.rect(Screen, COLOR_SKIN, [(350, 485), (100, 10)])
+
 endGame = False
 #Se define para poder gestionar cada cuando se ejecuta un fotograma
 reloj = pygame.time.Clock()
@@ -72,13 +88,14 @@ while not endGame:
     #---La lógica del juego
 
     #---Código de dibujo----
-    Screen.fill(WHITE)
+    Screen.fill(COLOR_BACKGROUND)
     #--Todos los dibujos van después de esta línea
 
     printHead()
     printLeftEye()
     printRightEye()
     printNose()
+    printMouth()
 
     #--Todos los dibujos van antes de esta línea
     pygame.display.flip()
