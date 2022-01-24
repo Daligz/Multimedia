@@ -24,7 +24,7 @@ pygame.display.set_caption("Tohru")
 
 # Functions
 def printHead():
-    pygame.draw.circle(Screen, COLOR_BORDER, (400, 300), 272.5)
+    pygame.draw.circle(Screen, COLOR_BORDER, (400, 300), 271.8)
     pygame.draw.circle(Screen, COLOR_SKIN, (400, 300), 270)
 
 def printLeftEye():
