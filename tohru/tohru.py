@@ -57,6 +57,8 @@ def printRightEye():
     # Pupil eye
     pygame.draw.ellipse(Screen, COLOR_EYE_PUPIL, [(525, 220), (10, 75)])
 
+def printNose():
+    pygame.draw.ellipse(Screen, COLOR_BORDER, [(400, 310), (3.5, 7.5)])
 
 endGame = False
 #Se define para poder gestionar cada cuando se ejecuta un fotograma
@@ -76,6 +78,7 @@ while not endGame:
     printHead()
     printLeftEye()
     printRightEye()
+    printNose()
 
     #--Todos los dibujos van antes de esta línea
     pygame.display.flip()
