@@ -44,15 +44,13 @@ def printLeftEye():
     pygame.draw.circle(Screen, COLOR_EYE_BRIGHTNESS_TOP, (225,  205), 17)
     # Pupil eye
     pygame.draw.ellipse(Screen, COLOR_EYE_PUPIL, [(245, 220), (10, 75)])
-    # Eye brown's
+    # Eye brown's | Removed
     # Middle
-    pygame.draw.arc(Screen, COLOR_BORDER, [(175, 185), (150, 150)], 0.6, 2.5, 5)
+    #pygame.draw.arc(Screen, COLOR_BORDER, [(175, 185), (150, 150)], 0.6, 2.5, 5)
     # Top
-    pygame.draw.arc(Screen, COLOR_BORDER, [(155, 170), (170, 150)], 0.6, 1.5, 2)
+    #pygame.draw.arc(Screen, COLOR_BORDER, [(155, 170), (170, 150)], 0.6, 1.5, 2)
     # Bottom
-    pygame.draw.arc(Screen, COLOR_BORDER, [(175, 120), (150, 200)], 4.2, 5.2, 2)
-    # Eye behind ??
-    #pygame.draw.polygon(Screen, COLOR_BORDER, [(175, 108), (200, 209), (350, 390)])
+    #pygame.draw.arc(Screen, COLOR_BORDER, [(175, 120), (150, 200)], 4.2, 5.2, 2)
     
 def printRightEye():
     # Right eye border
