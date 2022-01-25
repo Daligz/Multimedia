@@ -1,4 +1,3 @@
-from re import S
 import pygame
 #colores  
 BLACK = (0, 0, 0)
