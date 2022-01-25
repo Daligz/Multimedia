@@ -11,6 +11,7 @@ COLOR_BACKGROUND = "#f7f7f7"
 COLOR_SKIN = "#ffe7d5"
 COLOR_BORDER = "#651c0d"
 COLOR_MOUTH = "#f48696"
+COLOR_HAIR = "#fdd073"
 
 # Eyes
 COLOR_EYE = "#da3e49"
@@ -87,6 +88,27 @@ def printMouth():
     # Tooth
     pygame.draw.polygon(Screen, COLOR_EYE_BRIGHTNESS_TOP, [(460, 390), (465, 405), (470, 390)])
 
+def printHair():
+    # Center
+    pygame.draw.polygon(Screen, COLOR_BORDER, [(500, 0), (250, 0), (445, 280)], 3)
+    pygame.draw.polygon(Screen, COLOR_HAIR, [(500, 0), (250, 0), (445, 280)])
+    
+    # Right
+    pygame.draw.polygon(Screen, COLOR_BORDER, [(450, 0), (500, 0), (525, 240)], 1)
+    pygame.draw.polygon(Screen, COLOR_HAIR, [(450, 0), (500, 0), (525, 240)])
+    
+    # Right 2
+    pygame.draw.polygon(Screen, COLOR_BORDER, [(400, 0), (600, 0), (655, 240)], 1)
+    pygame.draw.polygon(Screen, COLOR_HAIR, [(400, 0), (600, 0), (655, 240)])
+
+    # Left
+    pygame.draw.polygon(Screen, COLOR_BORDER, [(250, 0), (300, 0), (320, 200)], 1)
+    pygame.draw.polygon(Screen, COLOR_HAIR, [(250, 0), (300, 0), (320, 200)])
+
+    # Left 2
+    pygame.draw.polygon(Screen, COLOR_BORDER, [(150, 0), (300, 0), (200, 200)], 2)
+    pygame.draw.polygon(Screen, COLOR_HAIR, [(150, 0), (300, 0), (200, 200)])
+
 endGame = False
 #Se define para poder gestionar cada cuando se ejecuta un fotograma
 reloj = pygame.time.Clock()
@@ -107,6 +129,7 @@ while not endGame:
     printRightEye()
     printNose()
     printMouth()
+    printHair()
 
     #--Todos los dibujos van antes de esta línea
     pygame.display.flip()
