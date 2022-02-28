@@ -1,0 +1,22 @@
+{
+	"name": "EasyAR.Sense.Sample.Eyewear_Nreal_ImageTracking_InWorld",
+	"references": [
+		"NRSDK",
+		"EasyAR.Sense"
+	],
+	"includePlatforms": [],
+	"excludePlatforms": [],
+	"allowUnsafeCode": false,
+	"overrideReferences": false,
+	"precompiledReferences": [],
+	"autoReferenced": true,
+	"defineConstraints": [],
+	"versionDefines": [
+		{
+			"name": "com.nreal.sdk",
+			"expression": "1.5.7",
+			"define": "EASYAR_ENABLE_NREAL"
+		}
+	],
+	"noEngineReferences": false
+}
